@@ -27,13 +27,20 @@ app.get('/json', function (req, res) {
             Name: "Milon",
             City: "Joypurhat"
         }
-    ]
+    ];
 
     res.status(201).json(myJsonArray);
 
 
 } );
 
+
+//Download response
+app.get("/download", function (req, res) {
+
+    res.download("./uploads/work.png");
+
+});
 
 app.listen(5050, function () {
     console.log("Express server running.");
