@@ -74,3 +74,11 @@ app.get("/cookie", function (req, res) {
     res.cookie("name", "Milon");
     res.end("Cookie set successful.");
 });
+
+
+//Clear Cookie Response
+app.get("/clearCookie", function (req, res) {
+
+    res.clearCookie("name");
+    res.end("Cookie clear successful.");
+});
