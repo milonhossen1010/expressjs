@@ -55,6 +55,15 @@ app.get("/bangladesh", function (req, res) {
 
 });
 
+
+//Header response
+app.get("/home", function (req, res) {
+
+    res.append("name", "Milon");
+    res.append("city", "Joypurhat");
+    res.status(201).send("This is body data.").end();
+});
+
 app.listen(5050, function () {
     console.log("Express server running.");
 });
