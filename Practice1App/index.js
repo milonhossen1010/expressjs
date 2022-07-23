@@ -67,3 +67,10 @@ app.get("/home", function (req, res) {
 app.listen(5050, function () {
     console.log("Express server running.");
 });
+
+//Cookie Response
+app.get("/cookie", function (req, res) {
+
+    res.cookie("name", "Milon");
+    res.end("Cookie set successful.");
+});
