@@ -8,11 +8,31 @@ app.get("/", function (req, res) {
 
 });
 
+//Status code
 app.post("/", function (req, res) {
 
     res.status(401).send("Unauthorized code.");
 
 });
+
+
+//Json array
+app.get('/json', function (req, res) {
+    let myJsonArray = [
+        {
+            Name: "Milon",
+            City: "Joypurhat"
+        },
+        {
+            Name: "Milon",
+            City: "Joypurhat"
+        }
+    ]
+
+    res.status(201).json(myJsonArray);
+
+
+} );
 
 
 app.listen(5050, function () {
