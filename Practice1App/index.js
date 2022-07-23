@@ -42,6 +42,19 @@ app.get("/download", function (req, res) {
 
 });
 
+//Redirect response
+app.get("/india", function (req, res) {
+
+    res.redirect("http://localhost:5050/bangladesh");
+
+});
+
+app.get("/bangladesh", function (req, res) {
+
+    res.send("This is Bangladesh.");
+
+});
+
 app.listen(5050, function () {
     console.log("Express server running.");
 });
