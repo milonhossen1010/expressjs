@@ -5,6 +5,13 @@ let multer = require("multer");
 
 app=express();
 
+//Application Middleware
+app.use(function (req, res, next) {
+
+    console.log("I'm application middleware.");
+    next();
+
+});
 
 
 //Query request
