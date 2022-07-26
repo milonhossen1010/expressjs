@@ -1,14 +1,9 @@
 let express = require("express");
 let bodyParser = require('body-parser');
 let multer = require("multer");
- multer = multer();
+
 
 app=express();
-// app.use(bodyParser.json());
-
-//Multer
-app.use(multer.array());
-app.use(express.static('public'));
 
 
 
@@ -30,12 +25,37 @@ app.post("/home", function (req, res) {
 
 
 //form data get by multer
-app.post("/multer", function (req, res) {
+// app.post("/multer", function (req, res) {
+//
+//     let JSONData =  req.body;
+//     let stringData = JSON.stringify(JSONData);
+//
+//     res.send(stringData);
+// });
 
-    let JSONData =  req.body;
-    let stringData = JSON.stringify(JSONData);
 
-    res.send(stringData);
+//File upload
+let storage = multer.diskStorage({
+    destination: function (req, file, callBack) {
+        callBack(null, "./uploads");
+    },
+
+    filename: function (req, file, callBack) {
+        callBack(null, file.originalname);
+    }
+
+});
+
+let upload = multer({storage:storage}).single("myfile");
+
+app.post('/upload', function (req, res) {
+    upload(req, res, function (error) {
+        if (error){
+            res.end("File upload fail.");
+        } else {
+            res.end("File upload successful.");
+        }
+    });
 });
 
 
