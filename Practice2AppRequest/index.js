@@ -66,6 +66,20 @@ app.post('/upload', function (req, res) {
 });
 
 
+//Route Middleware
+app.use("/about", function (req, res, next) {
+
+
+    console.log("I'm Route Middleware for about page.");
+    next();
+});
+
+
+app.get("/about", function (req, res) {
+    res.end("<h1>About us</h1>");
+});
+
+
 app.listen(5050, function () {
     console.log("Server running successful.");
 });
