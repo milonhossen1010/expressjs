@@ -1,2 +1,13 @@
-1. Body Parser ('Body data get'),
-2. multer (multipart/form-data)
+Body Parser ('Body data get'),
+multer (multipart/form-data)
+npm i cookie-parser
+npm i jsonwebtoken
+npm i mysql
+npm i mongoose
+npm i dotenv
+npm i cors
+npm i express-mongo-sanitize
+npm i express-rate-limit
+npm i helmet
+npm i hpp
+npm i xss-clean
